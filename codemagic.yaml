@@ -1,0 +1,13 @@
+workflows:
+  default-workflow:
+    name: Build and Publish APK
+    environment:
+      flutter: stable
+      android: true
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Build APK
+        script: flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
